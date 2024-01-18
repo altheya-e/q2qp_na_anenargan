@@ -1,0 +1,364 @@
+@font-face {
+    font-family: 'bumerang';
+    src: url(../media/bumerang.otf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+p{
+    font-family: Verdana;
+}
+
+menu{
+    background-color: #D1D1FF;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    width: 3%;
+    height: 100vh;
+    display: flex;
+    position: fixed;
+    z-index: 1;
+    order: 1;
+    z-index: 2;
+}
+
+button{
+    background-image: url(../media/button.png);
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    border: none;
+    height: 5vh;
+    width: 5vh;
+    margin-left: 0.2vh;
+    margin-top: 50vh;
+    position: fixed;
+    z-index: 3;
+}
+
+.menu-content{
+    display: none;
+    position: absolute;
+    width: 20vw;
+    background-color: #D1D1FF;
+    border: 1px solid black;
+    height: 100%;
+    z-index: 2;
+}
+
+#top-menu{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+#top-menu p{
+    font-size: 0.8em;
+    padding-left: 5vh;
+    padding-right: 5vh;
+}
+
+#middle-menu, #bottom-menu{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    padding: 5vh;
+}
+
+#middle-menu h1, #bottom-menu h1{
+    font-size: 3em;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+#middle-menu p, #bottom-menu p{
+    font-size: 0.8em;
+}
+
+button:hover + .menu-content{
+    display: block;
+}
+
+button:hover{
+    rotate: 180deg;
+}
+
+#index-body{
+    overflow-x: hidden;
+    height: max-content;
+}
+
+.homepage{
+    display: flex;
+    background: linear-gradient(to bottom, #D1D1FF, #FFD8BE);
+    background-repeat: no-repeat;
+    background-size: cover;   
+    height: 120vh;
+    width: 100vw;
+    flex-direction: column;
+    border-top: 1px solid black;
+}
+
+#home-menu{
+    height: 140vh;
+}
+
+.heading{
+    font-family: 'bumerang';
+    font-size: 4em;
+}
+
+nav{
+    display: flex;
+    height: max-content;
+    justify-content: center;
+    justify-content: space-evenly;
+    width: 100vw;
+    padding-top: 2vh;
+    order: 2;
+    border-bottom: 1px solid black;
+    z-index: 1;
+}
+
+#left-menu, #right-menu{
+    margin-top: 1vh;
+}
+
+#left-menu a, #right-menu a{
+    text-decoration: none;
+    color: black;
+    font-family: Verdana;
+    font-size: 1em;
+}
+
+#right-menu{
+    word-spacing: 5vw;
+    margin-right: -9vw;
+}
+
+#site-title{
+    font-family: 'bumerang';
+    font-size: 2.5em;
+}
+
+
+
+header{
+    background-color: white;
+    height: 45vh;
+    width: 100vw;
+    order: 3;
+    display: flex;
+    position: relative;
+    font-family: 'bumerang';
+    font-size: 4em;
+    text-align: center;
+    border-bottom: 1px solid black;
+    order: 3;
+    justify-content: center;
+}
+
+#banner-head{
+    align-self: center;
+    text-align: center;
+}
+
+.textbox{
+    order: 4;
+    display: block;
+    position: absolute;
+    margin-top: 60vh;
+    margin-left: 4%;
+    padding-left: 1vw;
+    padding-right: 2vw;
+}
+
+.textbox p{
+    font-size: 1.5em;
+    font-family: Arial;
+    text-align: center;
+}
+
+#gallery1{
+    height: 40vh;
+    width: 93vw;
+    background-color: #D1D1FF;
+    border: 1px solid black;
+    margin-top: 4vh;
+    border-radius: 30px;    
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+}
+
+.gallery1-img{
+    background-image: url(../media/pug.jpg);
+    background-size: cover;
+    background-position-x: center;
+    height: 30vh;
+    width: 13vw;
+    border-radius: 10%;
+    border: 1px solid rgb(37, 50, 70);
+    opacity: .7;
+}
+
+.gallery1-img:hover {
+    transform: scale(1.2);
+    box-shadow: rgba(245, 116, 228, 0.02) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.02) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.01) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.04) 0px 2px 1px, rgba(0, 0, 0, 0.04) 0px 4px 2px, rgba(0, 0, 0, 0.02) 0px 8px 4px, rgba(0, 0, 0, 0.02) 0px 16px 8px, rgba(0, 0, 0, 0.02) 0px 32px 16px;
+    opacity: 1;
+}
+
+/* PAGE 2 */
+.page2{
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, #D1D1FF, #FFD8BE);
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+#page2-content{
+    order: 4;
+}
+
+#p2head{
+    font-family: 'bumerang';
+    font-size: 3em;
+    position: relative;
+    margin-left: 5vw; 
+}
+
+#page2-content p{
+    font-size: 1em;
+    font-family: Arial;
+    margin-left: 5vw;
+}   
+
+#gallery2{
+    display: flex;
+    height: max-content;
+    justify-content: space-evenly;
+    width: 100vw;
+    margin-left: 1.5vw;
+    margin-top: 10vh;
+    order: 5;
+}
+
+#frame1, #frame2, #frame3{
+    background-color: #FCDBF9;
+    height: 50vh;
+    width: 50vh;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+
+/* PAGE 3 */
+.page3{
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, #D1D1FF, #FFD8BE);
+    height: 115vh;
+    overflow-x: hidden;
+}
+
+#menu3{
+    height: 115vh;
+}
+
+#gallery3, #gallery4{
+    overflow-y: hidden;
+    margin-top: 5vh;
+    height: max-content;
+    width: max-content;
+    order: 3;
+    display: flex;
+    flex-direction: column;
+    margin-left: 5vw;
+    text-align: center;
+}
+
+.rainbow{
+    display: flex;
+}
+
+.red, .orange, .yellow, .green, .blue, .purple{
+    flex-direction: column;
+    align-items: center;
+}   
+
+.red{
+    display: flex;
+    width: 15vw;
+    height: 35vh;
+    background-color: #FF99C8;
+    border: 1px solid black;
+}
+
+.red img, .orange img, .yellow img, .green img, .blue img, .purple img {
+    border-radius: 300px;
+    margin-top: 1vh;
+    height: 28vh;
+    width: 28vh;
+}
+
+.red p, .orange p, .yellow p, .green p, .blue p, .purple p{
+    margin-top: 1vh;
+}
+
+.orange{
+    display: flex;
+    width: 15vw;
+    height: 35vh;
+    background-color: #FEC8C3;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.yellow{
+    display: flex;
+    width: 15vw;
+    height: 35vh;
+    background-color: #FCF6BD;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.green{
+    display: flex;
+    width: 15vw;
+    height: 35vh;
+    background-color: #D0F4DE;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.blue{
+    display: flex;
+    width: 15vw;
+    height: 35vh;
+    background-color: #A9DEF9;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black; 
+}
+
+.purple{
+    display: flex;
+    width: 15vw;
+    height: 35vh;
+    background-color: #E4C1F9;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+    
+
+
+
