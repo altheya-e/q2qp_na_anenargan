@@ -12,7 +12,7 @@ p{
     font-family: Verdana;
 }
 
-menu{
+aside{
     background-color: #D1D1FF;
     border-left: 1px solid black;
     border-right: 1px solid black;
@@ -22,10 +22,10 @@ menu{
     position: fixed;
     z-index: 1;
     order: 1;
-    z-index: 2;
+    z-index: 4;
 }
 
-button{
+#menu-button{
     background-image: url(../media/button.png);
     border-radius: 50%;
     background-size: cover;
@@ -36,7 +36,7 @@ button{
     margin-left: 0.2vh;
     margin-top: 50vh;
     position: fixed;
-    z-index: 3;
+    z-index: 5;
 }
 
 .menu-content{
@@ -46,7 +46,7 @@ button{
     background-color: #D1D1FF;
     border: 1px solid black;
     height: 100%;
-    z-index: 2;
+    z-index: 4;
 }
 
 #top-menu{
@@ -60,6 +60,25 @@ button{
     padding-left: 5vh;
     padding-right: 5vh;
 }
+
+.socmed{
+    display: flex;
+    height: fit-content;
+    justify-content: center;
+    padding-bottom: 2vh;
+    
+}
+
+.icon{
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+}
+
+#icon1{background: url(../media/socmed.png) no-repeat -66px -72px;}
+#icon2{background: url(../media/socmed.png) no-repeat -439px -146px;}
+#icon3{background: url(../media/socmed.png) no-repeat -290px -221px;}
+#icon4{background: url(../media/socmed.png) no-repeat -439px -221px;}
 
 #middle-menu, #bottom-menu{
     display: flex;
@@ -78,27 +97,27 @@ button{
     font-size: 0.8em;
 }
 
-button:hover + .menu-content{
+#menu-button:hover + .menu-content{
     display: block;
 }
 
-button:hover{
+#menu-button:hover{
     rotate: 180deg;
 }
 
-#index-body{
-    overflow-x: hidden;
-    height: max-content;
+
+/* why wont height: max-content work */
+body{
+    background: linear-gradient(to bottom, #D1D1FF, #FFD8BE);
+    position: fixed;
+    display: flex;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    flex-direction: column;
 }
 
 .homepage{
-    display: flex;
-    background: linear-gradient(to bottom, #D1D1FF, #FFD8BE);
-    background-repeat: no-repeat;
-    background-size: cover;   
-    height: 120vh;
-    width: 100vw;
-    flex-direction: column;
     border-top: 1px solid black;
 }
 
@@ -120,18 +139,19 @@ nav{
     padding-top: 2vh;
     order: 2;
     border-bottom: 1px solid black;
-    z-index: 1;
+    z-index: 2;
 }
 
-#left-menu, #right-menu{
-    margin-top: 1vh;
-}
+#left-menu, #right-menu{margin-top: 1vh;}
 
 #left-menu a, #right-menu a{
     text-decoration: none;
     color: black;
     font-family: Verdana;
     font-size: 1em;
+    border-radius: 20px;
+    padding: 1vw;
+    
 }
 
 #right-menu{
@@ -139,9 +159,48 @@ nav{
     margin-right: -9vw;
 }
 
+#left-menu a:hover{
+    background-color: #b4b4eb;
+}
+
+#right-menu a:hover{
+    background-color: #b4b4eb;
+}
+
 #site-title{
     font-family: 'bumerang';
     font-size: 2.5em;
+}
+
+#dropown-button{
+    border: none;
+    background: none;
+    font-size: 5em;
+    font-family: 'bumerang';
+    width: max-content;
+    align-self: center;
+    order: 2;
+    height: min-content;
+    margin-bottom: 3vh;
+    display: none;
+}
+
+/* why wont this work */
+#dropdown-button:hover .dropdown{
+    display: block;
+    display: block;
+    background-color: #ffdd00;
+    border-radius: 10%;
+}
+
+.dropdown{
+    display: none;
+    text-decoration: none;
+    font-family: 'Verdana';
+    font-size: 1.2em;
+    text-transform: uppercase;
+    height: max-content;
+    background-color: #FF99C8;
 }
 
 
@@ -161,12 +220,26 @@ header{
     justify-content: center;
 }
 
+#vidbg{
+    width: 100vw;
+    height: 45vh;
+    object-fit: cover;
+    position:absolute;
+    opacity: 70%;
+    z-index: 1;
+}
+
 #banner-head{
     align-self: center;
     text-align: center;
+    z-index: 2;
+    word-spacing: 1.3vw;
+    color: #FF99C8;
+    text-shadow: 1px 1px black;
+    
 }
 
-.textbox{
+section{
     order: 4;
     display: block;
     position: absolute;
@@ -176,16 +249,19 @@ header{
     padding-right: 2vw;
 }
 
-.textbox p{
+section p{
     font-size: 1.5em;
     font-family: Arial;
-    text-align: center;
+    text-align: justify;
+    line-height: 3.5vh;
+    padding-right: 2vw;
 }
 
 #gallery1{
     height: 40vh;
     width: 93vw;
-    background-color: #D1D1FF;
+    /* background-color: #D1D1FF; */
+    background: linear-gradient(to bottom, #D1D1FF, #ffbbdb);
     border: 1px solid black;
     margin-top: 4vh;
     border-radius: 30px;    
@@ -195,20 +271,34 @@ header{
 }
 
 .gallery1-img{
-    background-image: url(../media/pug.jpg);
-    background-size: cover;
+    background-size: contain;
     background-position-x: center;
-    height: 30vh;
-    width: 13vw;
-    border-radius: 10%;
-    border: 1px solid rgb(37, 50, 70);
-    opacity: .7;
+    background-repeat: no-repeat;
+    margin-top: 5%;
+    height: 40vh;
+    width: 20vw;
 }
 
 .gallery1-img:hover {
     transform: scale(1.2);
-    box-shadow: rgba(245, 116, 228, 0.02) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.02) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.01) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.04) 0px 2px 1px, rgba(0, 0, 0, 0.04) 0px 4px 2px, rgba(0, 0, 0, 0.02) 0px 8px 4px, rgba(0, 0, 0, 0.02) 0px 16px 8px, rgba(0, 0, 0, 0.02) 0px 32px 16px;
     opacity: 1;
+}
+
+#img1{background-image: url(../media/sun.png);}
+#img2{background-image: url(../media/windmill.png);}
+#img3{background-image: url(../media/waterfall.png);}
+#img4{background-image: url(../media/tide.png);}
+#img5{background-image: url(../media/geothermal.png);}
+#img6{background-image: url(../media/biomass.png);}
+
+@media (orientation: portrait){
+    .homepage{width: 120vw; overflow-x: hidden;}
+    nav{flex-direction: column; text-align: center;}
+    #site-title{order: 1;}
+    #left-menu{display: none;}
+    #right-menu{display: none;}
+    #dropdown-button{display: block;}
+    header{width: 100vw;}
 }
 
 /* PAGE 2 */
@@ -226,15 +316,18 @@ header{
 
 #p2head{
     font-family: 'bumerang';
-    font-size: 3em;
+    font-size: 5em;
     position: relative;
     margin-left: 5vw; 
+    color: #FF99C8;
+    text-shadow: 1px 1px black;
 }
 
 #page2-content p{
-    font-size: 1em;
+    font-size: 1.5em;
+    padding-right: 3vw;
     font-family: Arial;
-    margin-left: 5vw;
+    margin-left: 5.5vw;
 }   
 
 #gallery2{
@@ -253,14 +346,51 @@ header{
     width: 50vh;
     border-radius: 20px;
     border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
+#frame1:hover{
+    background-color: #f7c7f2;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+
+#frame2:hover{
+    background-color: #f7c7f2;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+
+#frame3:hover{
+    background-color: #f7c7f2;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+
+.gallery2-img{
+    border-radius: 20px;
+    height: 35vh;
+    width: 25vw;
+}
+
+#caption{
+    color: #FF99C8;
+    text-shadow: 1px 1px black;
+}
+
+#img7{background-image: url(../media/advocate.jpg);}
+#img8{background-image: url(../media/pug.jpg);}
+#img9{background-image: url(../media/pug.jpg);}
+
+
 
 /* PAGE 3 */
 .page3{
     display: flex;
     flex-direction: column;
     background: linear-gradient(to bottom, #D1D1FF, #FFD8BE);
-    height: 115vh;
+    min-height: max-content;
+    padding-bottom: 3vh;
     overflow-x: hidden;
 }
 
@@ -287,6 +417,7 @@ header{
 .red, .orange, .yellow, .green, .blue, .purple{
     flex-direction: column;
     align-items: center;
+    overflow-x: hidden;
 }   
 
 .red{
@@ -300,8 +431,8 @@ header{
 .red img, .orange img, .yellow img, .green img, .blue img, .purple img {
     border-radius: 300px;
     margin-top: 1vh;
-    height: 28vh;
-    width: 28vh;
+    height: 24vh;
+    width: 24vh;
 }
 
 .red p, .orange p, .yellow p, .green p, .blue p, .purple p{
