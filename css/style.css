@@ -13,7 +13,7 @@ html{
 }
 
 p{
-    font-family: Verdana;
+    font-family: 'Verdana';
     font-size: 1.2em;
 }
 
@@ -29,7 +29,6 @@ aside{
     height: 100vh;
     display: flex;
     position: fixed;
-
     z-index: 1;
     order: 1;
     z-index: 4;
@@ -65,10 +64,11 @@ aside{
     display: flex;
     text-align: center  ;
     flex-direction: column;
+    padding-bottom: 2vh;
 }
 
 #top-menu p{
-    font-size: 1.2em;
+    font-size: 1em;
     padding-left: 5vh;
     padding-right: 5vh;
 }
@@ -96,69 +96,38 @@ aside{
     display: flex;
     text-align: justify;
     flex-direction: column;
-    padding: 5vh;
-    padding-bottom: none;
-    padding-top: none;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-bottom: 3vh;
 }
 
-#bottom-menu{padding-bottom: 10vh;}
 
 #middle-menu h1, #bottom-menu h1{
-    font-size: 3em;
+    font-size: 2em;
     text-decoration: none;
     text-align: center;
     font-weight: normal;
 }
 
-#middle-menu p, #bottom-menu p{font-size: 1.2em;}
-
-#menu-button:focus + .menu-content{
-    animation: menuIn 1s forwards;
+#middle-menu p, #bottom-menu p{
+    padding-top: 1vh;
+    font-size: 1em;
+    text-align: center;
 }
+
+#menu-button:focus + .menu-content{animation: menuIn 1s forwards;}
 
 .menu-content:not(:focus-within) + #menu-button{
     animation: buttonOff 1s forwards;
 }
 
-.menu-content:focus-within{transform: translateX(100%);}
+.menu-content:focus{transform: translateX(100%);}
 
 #menu-button:focus{animation: buttonOn 1s forwards;}
 
-.menu-content:not(:focus-within){animation: menuOut 1s forwards;}
+#menu-button:not(:focus){animation: buttonOff 1s forwards;}
 
-
-#vision, #mission{
-    display: block;
-    font-family: 'Verdana';
-    height: max-content;
-    padding: 1vw;
-    background-color: #f5ccc8;
-    border: 1px solid rgb(59, 36, 4);
-}
-
-#middle-menu p, #bottom-menu p{
-    display: none;
-    padding-top: 1vh;
-    font-size: 1.3em;
-    text-align: center;
-}
-
-#vision:hover{
-    background-color: #acbe7a;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-}
-
-#mission:hover{
-    background-color: #acbe7a;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-}
-
-#vision:hover + #middle-menu p{
-    display: block;
-}
-
-#mission:hover + #bottom-menu p{display: block;}
-
+.menu-content:not(:focus){animation: menuOut 1s forwards;}
 
 @keyframes menuIn {
     from{
@@ -350,7 +319,7 @@ section{
 
 section p{
     font-size: 1.5em;
-    font-family: Arial;
+    font-family: 'Verdana';
     text-align: justify;
     line-height: 3.5vh;
     padding-right: 2vw;
@@ -425,8 +394,6 @@ section p{
         width: 80vw; 
         height: 40vh; 
         background-size: cover;}
-    #vision, #mission{display: block;}
-    #middle-menu p, #bottom-menu p{display: none;}
 }
 
 /* PAGE 2 */
@@ -441,12 +408,13 @@ main{
     position: relative;
     margin-left: 5vw; 
     color: rgb(59, 36, 4);
+    text-shadow: 3px 3px #618f6d;
 }
 
 main p{
     font-size: 1.5em;
     padding-right: 3vw;
-    font-family: Arial;
+    font-family: 'Verdana';
     margin-left: 5.5vw;
 }   
 
@@ -463,7 +431,7 @@ main p{
 #frame1, #frame2, #frame3{
     background-color: #FCDBF9;
     height: 50vh;
-    width: 50vh;
+    width: 50vh;    
     border-radius: 20px;
     border: 1px solid rgb(59, 36, 4);
     display: flex;
@@ -476,11 +444,10 @@ main p{
     border-radius: 20px;
     height: 35vh;
     width: 25vw;
+    margin-top: 5%;
 }
 
-#caption{
-    color: #acbe7a;
-}
+#caption{color: #acbe7a;}
 
 
 #img7{background-image: url(../media/advocate.jpg); background-size: cover; background-position-x: right; border: 1px solid rgb(59, 36, 4);}
@@ -521,6 +488,7 @@ main p{
     flex-direction: column;
     align-items: center;
     border-radius: 20px;
+    min-height: max-content;
 }   
 
 #frame4:hover, #frame5:hover, #frame6:hover, #frame7:hover, #frame8:hover, #frame9:hover{border: 3px solid white;}
@@ -528,8 +496,8 @@ main p{
 .gal3-img, .gal4-img {
     border-radius: 300px;
     margin-top: 1vh;
-    height: 22vh;
-    width: 22vh;
+    height: 50%;
+    width: 80%;
 }
 
 #frame4 p, #frame5 p, #frame6 p, #frame7 p, #frame8 p, #frame9 p{
@@ -609,7 +577,7 @@ main p{
     display: flex;
     width: 15vw;
     height: 35vh;
-    background-color: #ffe4c6;
+    background-color:   ;
     border: 0.5px solid rgb(59, 36, 4);
     border-left: none;
 }
